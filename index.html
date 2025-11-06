@@ -3,32 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modul 2 - GitHub Pages</title>
+  <title>🌸 Putri Intan | Modul 2 - GitHub Pages 🌸</title>
   <style>
+    /* 🌸 Tema Pink Lucu */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f6ff;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(180deg, #ffe6f2, #ffcce0);
+      color: #444;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 40px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+
     h1 {
-      color: #0066cc;
+      color: #ff66a3;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px #fff;
     }
+
     p {
-      color: #333;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      max-width: 500px;
+      margin: 10px auto;
+      color: #6d1b5b;
     }
+
+    .card {
+      background-color: #fff0f6;
+      border-radius: 25px;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+      padding: 30px;
+      margin: 20px;
+      width: 90%;
+      max-width: 600px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    button {
+      background-color: #ff80bf;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin-top: 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff4da6;
+      transform: scale(1.05);
+    }
+
     footer {
-      margin-top: 50px;
-      font-size: 12px;
-      color: gray;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #a84c84;
+    }
+
+    /* Tambahan animasi lucu */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1, .card {
+      animation: float 3s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
-  <h1>Assalamu’alaikum, Aku siap ngoding!</h1>
-  <p>Halo, saya Putri Intan. Ini hasil praktikum Modul 2 — GitHub Pages.</p>
-  <p>Website ini di-hosting langsung menggunakan GitHub Pages dari branch <b>modul-2</b>.</p>
+  <div class="card">
+    <h1>🌷 Assalamu’alaikum, Aku Siap Ngoding! 🌷</h1>
+    <p>Hai! Aku <strong>Putri Intan</strong>. Ini adalah hasil <em>Praktikum Modul 2</em> tentang GitHub Pages 💕</p>
+    <p>Website ini dibuat dan di-hosting langsung dari GitHub.  
+      Desainnya pink dan lucu, biar semangat ngoding terus! 💻✨</p>
+    <button onclick="alert('Semangat terus ya, Intan! 💖')">Klik Aku!</button>
+  </div>
 
-  <footer>© 2025 Putri Intan - Praktikum Web Dasar</footer>
+  <footer>© 2025 Putri Intan | Praktikum Web Dasar</footer>
 </body>
 </html>
