@@ -1,0 +1,68 @@
+/* 🌸 Style untuk Semantic HTML Modul 4 */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffe6f2; /* pink muda pastel */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #ffb6c1;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  border-bottom: 3px solid #ff91af;
+}
+
+/* Navigation */
+nav {
+  background-color: #ffd6e0;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #d63384;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #a3005b;
+}
+
+/* Main Content */
+main {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+}
+
+/* Article and Section */
+article {
+  margin-bottom: 20px;
+}
+
+section {
+  background-color: #fff0f5;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  background-color: #ffb6c1;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-top: 3px solid #ff91af;
+  font-size: 14px;
+}
