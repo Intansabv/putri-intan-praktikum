@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran - Klinik Sehat Madiun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f0f8ff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        input[type="submit"] {
+            background: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulir Pendaftaran Pasien</h1>
+        <h2>Klinik Sehat Madiun</h2>
+        
+        <form action="formulir_kliniksehat.html" method="get">
+            <div class="form-group">
+                <label for="nama_pasien">Nama Lengkap Pasien:</label>
+                <input type="text" id="nama_pasien" name="nama_pasien" placeholder="Masukkan nama lengkap">
+            </div>
+
+            <div class="form-group">
+                <label for="tanggal_lahir">Tanggal Lahir:</label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+            </div>
+
+            <div class="form-group">
+                <label for="no_telepon">No. Telepon:</label>
+                <input type="tel" id="no_telepon" name="no_telepon" placeholder="08xxxxxxxxxx">
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <input type="radio" id="laki_klinik" name="jenis_kelamin" value="laki-laki">
+                    <label for="laki_klinik">Laki-laki</label>
+                    
+                    <input type="radio" id="perempuan_klinik" name="jenis_kelamin" value="perempuan">
+                    <label for="perempuan_klinik">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="poli">Poli yang Dituju:</label>
+                <select id="poli" name="poli">
+                    <option value="umum">Poli Umum</option>
+                    <option value="gigi">Poli Gigi</option>
+                    <option value="anak">Poli Anak</option>
+                    <option value="kandungan">Poli Kandungan</option>
+                    <option value="jantung">Poli Jantung</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Asuransi Kesehatan:</label>
+                <div class="radio-group">
+                    <input type="radio" id="bpjs" name="asuransi" value="bpjs">
+                    <label for="bpjs">BPJS</label>
+                    
+                    <input type="radio" id="mandiri" name="asuransi" value="mandiri">
+                    <label for="mandiri">Mandiri</label>
+                    
+                    <input type="radio" id="lainnya" name="asuransi" value="lainnya">
+                    <label for="lainnya">Lainnya</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Keluhan:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="demam" name="keluhan_demam">
+                    <label for="demam">Demam</label>
+                    
+                    <input type="checkbox" id="batuk" name="keluhan_batuk">
+                    <label for="batuk">Batuk</label>
+                    
+                    <input type="checkbox" id="sakit_kepala" name="keluhan_sakit_kepala">
+                    <label for="sakit_kepala">Sakit Kepala</label>
+                    
+                    <input type="checkbox" id="mual" name="keluhan_mual">
+                    <label for="mual">Mual</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="keluhan_lain">Keluhan Lainnya:</label>
+                <textarea id="keluhan_lain" name="keluhan_lain" rows="4" placeholder="Jelaskan keluhan Anda secara detail"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Daftar Sekarang">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
