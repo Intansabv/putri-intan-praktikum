@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Nilai Angka ke Huruf - Modul 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f58d8d 0%, #cc0182 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #e00038, #ed4cc5);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .table-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #4d093e;
+        }
+        
+        .table-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .table-section h3 i {
+            color: #e0007f;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background: #b30b65;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        tr:hover {
+            background: #f0f0f0;
+        }
+        
+        .nilai-huruf {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .E { color: #e74c3c; }
+        .D { color: #e67e22; }
+        .C { color: #f1c40f; }
+        .BC { color: #2ecc71; }
+        .B { color: #3498db; }
+        .A { color: #9b59b6; }
+        .A-plus { color: #1abc9c; }
+        
+        .converter-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 2px solid #f0f0f0;
+        }
+        
+        .converter-section h3 {
+            color: #333;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .converter-section h3 i {
+            color: #e000a0;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        input[type="number"]:focus {
+            border-color: #f426d5;
+            box-shadow: 0 0 0 3px rgba(74, 0, 224, 0.1);
+            outline: none;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-konversi {
+            background: linear-gradient(to right, #e00025, #e22dd9);
+            color: white;
+        }
+        
+        .btn-reset {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #ddd;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(0,0,0,0.1);
+        }
+        
+        .btn-konversi:hover {
+            background: linear-gradient(to right, #b0001d, #c21d9c);
+        }
+        
+        .btn-reset:hover {
+            background: #e9ecef;
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-radius: 15px;
+            text-align: center;
+            border: 2px dashed #e000be;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-title {
+            color: #555;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .result-value {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .result-desc {
+            color: #777;
+            font-size: 1.1rem;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+        
+        .footer i {
+            color: #e00068;
+            margin: 0 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-exchange-alt"></i> Konversi Nilai Angka ke Huruf</h1>
+            <p>Modul 8 - Praktikum Web Dasar | Sistem Konversi Nilai Mahasiswa</p>
+        </div>
+        
+        <div class="content">
+            <div class="table-section">
+                <h3><i class="fas fa-table"></i> Tabel Konversi Nilai</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Range Angka</th>
+                            <th>Nilai Huruf</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0 - 40</td>
+                            <td class="nilai-huruf E">E</td>
+                            <td>Tidak Lulus</td>
+                        </tr>
+                        <tr>
+                            <td>41 - 55</td>
+                            <td class="nilai-huruf D">D</td>
+                            <td>Mengulang</td>
+                        </tr>
+                        <tr>
+                            <td>56 - 60</td>
+                            <td class="nilai-huruf C">C</td>
+                            <td>Cukup</td>
+                        </tr>
+                        <tr>
+                            <td>61 - 65</td>
+                            <td class="nilai-huruf BC">BC</td>
+                            <td>Baik</td>
+                        </tr>
+                        <tr>
+                            <td>66 - 70</td>
+                            <td class="nilai-huruf B">B</td>
+                            <td>Baik Sekali</td>
+                        </tr>
+                        <tr>
+                            <td>71 - 80</td>
+                            <td class="nilai-huruf AB">AB</td>
+                            <td>Sangat Baik</td>
+                        </tr>
+                        <tr>
+                            <td>81 - 100</td>
+                            <td class="nilai-huruf A">A</td>
+                            <td>Sempurna</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="converter-section">
+                <h3><i class="fas fa-calculator"></i> Konverter Nilai</h3>
+                
+                <div class="input-group">
+                    <label for="nilaiInput">
+                        <i class="fas fa-keyboard"></i> Masukkan Nilai Angka (0-100):
+                    </label>
+                    <input type="number" id="nilaiInput" min="0" max="100" 
+                           placeholder="Contoh: 75, 82, 95" 
+                           onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-konversi" onclick="konversiNilai()">
+                        <i class="fas fa-sync-alt"></i> Konversi Nilai
+                    </button>
+                    <button class="btn-reset" onclick="resetForm()">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+                
+                <div class="result" id="resultBox">
+                    <div class="result-title">
+                        <i class="fas fa-check-circle"></i> Hasil Konversi:
+                    </div>
+                    <div class="result-value" id="resultValue">A</div>
+                    <div class="result-desc">
+                        Nilai <span id="inputValue">0</span> setara dengan 
+                        <strong id="resultHuruf">A</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                <i class="fas fa-code"></i> 
+                Dibuat dengan JavaScript | 
+                <i class="fas fa-user-graduate"></i> 
+                Modul 8 - Praktikum Web Dasar |
+                <i class="fas fa-clock"></i> 
+                <script>document.write("Terakhir dimodifikasi: " + document.lastModified);</script>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function konversiNilai() {
+            const input = document.getElementById('nilaiInput');
+            const nilai = parseInt(input.value);
+            const resultBox = document.getElementById('resultBox');
+            const resultValue = document.getElementById('resultValue');
+            const resultHuruf = document.getElementById('resultHuruf');
+            const inputValue = document.getElementById('inputValue');
+            
+            // Validasi input
+            if (isNaN(nilai) || nilai < 0 || nilai > 100) {
+                alert('⚠️ Masukkan angka antara 0-100!');
+                input.focus();
+                return;
+            }
+            
+            let nilaiHuruf = '';
+            let warna = '';
+            let keterangan = '';
+            
+            // Logika konversi
+            if (nilai <= 40) {
+                nilaiHuruf = 'E';
+                warna = '#e74c3c';
+                keterangan = 'Tidak Lulus';
+            } else if (nilai <= 55) {
+                nilaiHuruf = 'D';
+                warna = '#e67e22';
+                keterangan = 'Mengulang';
+            } else if (nilai <= 60) {
+                nilaiHuruf = 'C';
+                warna = '#f1c40f';
+                keterangan = 'Cukup';
+            } else if (nilai <= 65) {
+                nilaiHuruf = 'BC';
+                warna = '#2ecc71';
+                keterangan = 'Baik';
+            } else if (nilai <= 70) {
+                nilaiHuruf = 'B';
+                warna = '#3498db';
+                keterangan = 'Baik Sekali';
+            } else if (nilai <= 80) {
+                nilaiHuruf = 'AB';
+                warna = '#9b59b6';
+                keterangan = 'Sangat Baik';
+            } else {
+                nilaiHuruf = 'A';
+                warna = '#1abc9c';
+                keterangan = 'Sempurna';
+            }
+            
+            // Update tampilan
+            inputValue.textContent = nilai;
+            resultValue.textContent = nilaiHuruf;
+            resultValue.style.color = warna;
+            resultHuruf.textContent = nilaiHuruf + ' (' + keterangan + ')';
+            resultHuruf.style.color = warna;
+            
+            // Tampilkan result box dengan animasi
+            resultBox.classList.add('show');
+            
+            // Scroll ke hasil
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function resetForm() {
+            document.getElementById('nilaiInput').value = '';
+            document.getElementById('resultBox').classList.remove('show');
+            document.getElementById('nilaiInput').focus();
+        }
+        
+        // Event listener untuk Enter key
+        document.getElementById('nilaiInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                konversiNilai();
+            }
+        });
+        
+        // Auto focus saat halaman dimuat
+        window.onload = function() {
+            document.getElementById('nilaiInput').focus();
+        };
+    </script>
+</body>
+</html>
