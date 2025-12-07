@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 9 - Praktikum PHP Dasar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid #1abc9c;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .latihan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .latihan-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        
+        .latihan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: #e3f2fd;
+        }
+        
+        .latihan-number {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .latihan-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .latihan-card p {
+            color: #555;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 5px solid #1abc9c;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #1abc9c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #16a085;
+        }
+        
+        @media (max-width: 768px) {
+            .latihan-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <i class="fas fa-code"></i>
+                MODUL 9 - PHP
+                <i class="fas fa-server"></i>
+            </h1>
+            <p>9 Latihan PHP Dasar: Variabel, Form, Array, Looping, dan Lainnya</p>
+        </div>
+        
+        <div class="content">
+            <h2 style="color: #2c3e50; margin-bottom: 20px; text-align: center;">
+                <i class="fas fa-list-ol"></i> DAFTAR LATIHAN PHP
+            </h2>
+            
+            <div class="latihan-grid">
+                <a href="latihan1.php" class="latihan-card">
+                    <div class="latihan-number">1</div>
+                    <h3>Hello World</h3>
+                    <p>Mencetak teks "Hello World" menggunakan perintah echo</p>
+                </a>
+                
+                <a href="latihan2.php" class="latihan-card">
+                    <div class="latihan-number">2</div>
+                    <h3>Perulangan For</h3>
+                    <p>Penerapan perulangan for untuk mencetak teks 10 kali</p>
+                </a>
+                
+                <a href="latihan3.php" class="latihan-card">
+                    <div class="latihan-number">3</div>
+                    <h3>PHP dalam HTML</h3>
+                    <p>Menulis kode PHP di dalam kode HTML</p>
+                </a>
+                
+                <a href="latihan4.php" class="latihan-card">
+                    <div class="latihan-number">4</div>
+                    <h3>Variabel di PHP</h3>
+                    <p>Penulisan variabel untuk integer, float, dan string</p>
+                </a>
+                
+                <a href="latihan5.php" class="latihan-card">
+                    <div class="latihan-number">5</div>
+                    <h3>Penghitungan Angka</h3>
+                    <p>Penerapan variabel dan operasi matematika</p>
+                </a>
+                
+                <a href="latihan6.php" class="latihan-card">
+                    <div class="latihan-number">6</div>
+                    <h3>Form Method POST</h3>
+                    <p>Form dengan method POST menggunakan \</p>
+                </a>
+                
+                <a href="latihan7.php" class="latihan-card">
+                    <div class="latihan-number">7</div>
+                    <h3>Form Method GET</h3>
+                    <p>Form dengan method GET menggunakan \</p>
+                </a>
+                
+                <a href="latihan8.php" class="latihan-card">
+                    <div class="latihan-number">8</div>
+                    <h3>Array 1 Dimensi</h3>
+                    <p>3 cara mendeklarasikan array satu dimensi</p>
+                </a>
+                
+                <a href="latihan9.php" class="latihan-card">
+                    <div class="latihan-number">9</div>
+                    <h3>Array Multidimensi</h3>
+                    <p>Deklarasi dan penggunaan array multidimensi</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><i class="fas fa-user-graduate"></i> Praktikum Web Dasar - Modul 9: PHP Dasar</p>
+            <p><i class="fas fa-calendar"></i> Tahun Ajaran 2024/2025</p>
+            <a href="#" class="btn">
+                <i class="fas fa-download"></i> Download Laporan
+            </a>
+        </div>
+    </div>
+</body>
+</html>
