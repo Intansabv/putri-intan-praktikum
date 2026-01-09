@@ -1,0 +1,67 @@
+.judul {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tombol {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.tombol:hover {
+    background-color: #0b7dda;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.form-input {
+    width: 300px;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.edit {
+    color: blue;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #FF9800;
+    color: white;
+    border-radius: 3px;
+}
+
+.hapus {
+    color: red;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 3px;
+}
