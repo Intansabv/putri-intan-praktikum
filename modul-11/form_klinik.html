@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Klinik Sehat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header" style="background: linear-gradient(135deg, #27ae60 0%, #219653 100%);">
+            <h1><i class="fas fa-hospital"></i> FORMULIR KLINIK SEHAT MADIUN</h1>
+            <h2>Pendaftaran Pasien Online</h2>
+            <h3>Melayani Dengan Hati, Sehat Untuk Semua</h3>
+        </div>
+
+        <div class="form-container">
+            <form method="POST" action="#">
+                <!-- Data Pasien -->
+                <h3 style="color: #2c3e50; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #27ae60;">
+                    <i class="fas fa-user-injured"></i> DATA PASIEN
+                </h3>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-id-card"></i> No. Rekam Medis:</label>
+                    <input type="text" name="no_rm" placeholder="RM-000001" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nama Lengkap Pasien:</label>
+                    <input type="text" name="nama_pasien" placeholder="Nama lengkap" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-venus-mars"></i> Jenis Kelamin:</label><br>
+                    <input type="radio" name="jk" value="L" id="lk" required>
+                    <label for="lk">Laki-laki</label>
+                    <input type="radio" name="jk" value="P" id="pr" required>
+                    <label for="pr">Perempuan</label>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-birthday-cake"></i> Tempat, Tanggal Lahir:</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" name="tempat_lahir" placeholder="Tempat lahir" style="flex: 1;">
+                        <input type="date" name="tanggal_lahir" style="flex: 1;">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-alt"></i> Umur:</label>
+                    <input type="number" name="umur" min="0" max="120" placeholder="Umur dalam tahun">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Alamat Lengkap:</label>
+                    <textarea name="alamat" rows="3" placeholder="Alamat lengkap" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-phone"></i> No. Telepon/HP:</label>
+                    <input type="tel" name="no_telp" placeholder="08xxxxxxxxxx" required>
+                </div>
+
+                <!-- Data Keluarga -->
+                <h3 style="color: #2c3e50; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #27ae60;">
+                    <i class="fas fa-users"></i> DATA KELUARGA
+                </h3>
+
+                <div class="form-group">
+                    <label><i class="fas fa-user-friends"></i> Nama Keluarga Terdekat:</label>
+                    <input type="text" name="nama_keluarga" placeholder="Nama suami/istri/orang tua">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-phone-alt"></i> No. HP Keluarga:</label>
+                    <input type="tel" name="no_telp_keluarga" placeholder="08xxxxxxxxxx">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-user-tag"></i> Hubungan dengan Pasien:</label>
+                    <select name="hubungan">
+                        <option value="">-- Pilih Hubungan --</option>
+                        <option value="Suami/Istri">Suami/Istri</option>
+                        <option value="Anak">Anak</option>
+                        <option value="Orang Tua">Orang Tua</option>
+                        <option value="Saudara">Saudara</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+
+                <!-- Data Kesehatan -->
+                <h3 style="color: #2c3e50; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #27ae60;">
+                    <i class="fas fa-stethoscope"></i> DATA KESEHATAN
+                </h3>
+
+                <div class="form-group">
+                    <label><i class="fas fa-notes-medical"></i> Keluhan Utama:</label>
+                    <textarea name="keluhan" rows="4" placeholder="Jelaskan keluhan yang dirasakan" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-plus"></i> Sejak Kapan Keluhan:</label>
+                    <input type="text" name="lama_keluhan" placeholder="Contoh: 3 hari yang lalu">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-history"></i> Riwayat Penyakit:</label><br>
+                    <input type="checkbox" name="riwayat[]" value="Hipertensi" id="hipertensi">
+                    <label for="hipertensi">Hipertensi</label>
+                    
+                    <input type="checkbox" name="riwayat[]" value="Diabetes" id="diabetes">
+                    <label for="diabetes">Diabetes</label>
+                    
+                    <input type="checkbox" name="riwayat[]" value="Jantung" id="jantung">
+                    <label for="jantung">Jantung</label>
+                    
+                    <input type="checkbox" name="riwayat[]" value="Asma" id="asma">
+                    <label for="asma">Asma</label>
+                    
+                    <input type="checkbox" name="riwayat[]" value="Alergi" id="alergi">
+                    <label for="alergi">Alergi</label>
+                    
+                    <input type="checkbox" name="riwayat[]" value="Lainnya" id="riwayat_lain">
+                    <label for="riwayat_lain">Lainnya</label>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-capsules"></i> Obat yang Sedang Dikonsumsi:</label>
+                    <textarea name="obat" rows="2" placeholder="Nama obat dan dosis"></textarea>
+                </div>
+
+                <!-- Data Dokter -->
+                <h3 style="color: #2c3e50; margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #27ae60;">
+                    <i class="fas fa-user-md"></i> PILIHAN DOKTER & JADWAL
+                </h3>
+
+                <div class="form-group">
+                    <label><i class="fas fa-user-md"></i> Pilih Dokter:</label>
+                    <select name="dokter" required>
+                        <option value="">-- Pilih Dokter --</option>
+                        <option value="dr. Ahmad Santoso">dr. Ahmad Santoso (Umum)</option>
+                        <option value="dr. Siti Rahayu">dr. Siti Rahayu (Anak)</option>
+                        <option value="dr. Budi Hartono">dr. Budi Hartono (Penyakit Dalam)</option>
+                        <option value="dr. Rina Wijaya">dr. Rina Wijaya (Kandungan)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-day"></i> Tanggal Berobat:</label>
+                    <input type="date" name="tanggal_berobat" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-clock"></i> Jam Praktek:</label>
+                    <select name="jam_praktek">
+                        <option value="08:00-10:00">Pagi (08:00 - 10:00)</option>
+                        <option value="13:00-15:00">Siang (13:00 - 15:00)</option>
+                        <option value="16:00-18:00">Sore (16:00 - 18:00)</option>
+                        <option value="19:00-21:00">Malam (19:00 - 21:00)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-comment-medical"></i> Catatan Tambahan:</label>
+                    <textarea name="catatan" rows="3" placeholder="Catatan atau permintaan khusus"></textarea>
+                </div>
+
+                <!-- Tombol -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn" style="background: #27ae60; padding: 15px 30px; font-size: 18px;">
+                        <i class="fas fa-clipboard-check"></i> DAFTAR SEKARANG
+                    </button>
+                    <button type="reset" class="btn" style="padding: 15px 30px; font-size: 18px;">
+                        <i class="fas fa-redo"></i> RESET FORM
+                    </button>
+                    <a href="index.php" class="btn" style="padding: 15px 30px; font-size: 18px;">
+                        <i class="fas fa-home"></i> KEMBALI
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer" style="background: #e8f5e9;">
+            <p><strong>KLINIK SEHAT MADIUN</strong></p>
+            <p>Jl. Kesehatan No. 10, Madiun | Telp: (0351) 456789 | Emergency: (0351) 456790</p>
+            <p>Jam Praktek: Senin-Sabtu 08:00-21:00 | Minggu 09:00-17:00 | 24 Jam untuk Gawat Darurat</p>
+            <p><i class="fas fa-heartbeat"></i> BPJS & Asuransi Diterima | <i class="fas fa-ambulance"></i> Layanan Ambulans 24 Jam</p>
+    <p><a href="tampil_klinik.php" style="color: white;"><i class="fas fa-database"></i> Lihat Data Pasien</a></p>
+        </div>
+    </div>
+
+    <script>
+    // Set tanggal hari ini sebagai default
+    document.addEventListener('DOMContentLoaded', function() {
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementsByName('tanggal_berobat')[0].value = today;
+        
+        // Hitung umur otomatis dari tanggal lahir
+        document.getElementsByName('tanggal_lahir')[0].addEventListener('change', function() {
+            var birthDate = new Date(this.value);
+            var today = new Date();
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            document.getElementsByName('umur')[0].value = age;
+        });
+    });
+    </script>
+</body>
+</html>
