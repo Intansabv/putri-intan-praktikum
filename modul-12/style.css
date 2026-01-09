@@ -1,0 +1,49 @@
+.judul {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tombol {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.tombol:hover {
+    background-color: #45a049;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.edit {
+    color: blue;
+    text-decoration: none;
+}
+
+.hapus {
+    color: red;
+    text-decoration: none;
+}
